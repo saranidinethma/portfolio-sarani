@@ -23,7 +23,7 @@ export default function ProjectDetail() {
       Key features include user authentication, real-time updates, data visualization, and a responsive design that works across all devices.
     `,
     technologies: ["React",   "Tailwind CSS"],
-    image: "/placeholder.svg",
+    image: "/images/flickco.png",
     demoUrl: "https://www.flickco.info/",
     githubUrl: "https://github.com/saranidinethma/Flickco",
     date: "January 2023",

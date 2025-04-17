@@ -13,65 +13,46 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: "E-commerce Platform",
+      title: "Flickco",
       category: "web",
       description:
-        "A full-featured e-commerce platform with product management, cart functionality, and payment processing.",
-      technologies: ["React", "Next.js", "Node.js", "MongoDB", "Stripe"],
-      image: "/placeholder.svg",
-      demoUrl: "#",
-      githubUrl: "#",
+        "A cinematic visuals and compelling narratives. Specializing in high-quality video production",
+      technologies: ["React", "Tailwindcss"],
+      image: "/images/flickco.png", // Update with your actual PNG path
+      demoUrl: "https://www.flickco.info/",
+      githubUrl: "https://github.com/saranidinethma/Flickco",
     },
     {
       id: 2,
-      title: "Task Management App",
+      title: "Virtual Secret Santa",
       category: "web",
-      description: "A collaborative task management application with real-time updates and team functionality.",
-      technologies: ["React", "Firebase", "Tailwind CSS", "Redux"],
-      image: "/placeholder.svg",
-      demoUrl: "#",
-      githubUrl: "#",
+      description: "An interactive web app for organizing Secret Santa gift exchanges, featuring easy setup and a fun user experience.",
+      technologies: ["React", "Express", "Tailwind CSS", "Node.js","PostgreSQL"],
+      image: "/images/Screenshot 2025-04-17 at 09.40.12.png", // Update with your actual PNG path
+      demoUrl: "https://virtual-secret-santa.vercel.app/",
+      githubUrl: "https://github.com/saranidinethma/Virtual-Secret-Santa",
     },
     {
       id: 3,
-      title: "Fitness Tracker",
+      title: "We Neighbour",
       category: "mobile",
-      description: "A mobile application for tracking workouts, nutrition, and fitness progress.",
-      technologies: ["React Native", "TypeScript", "GraphQL", "MongoDB"],
-      image: "/placeholder.svg",
-      demoUrl: "#",
-      githubUrl: "#",
+      description: "We Neighbour is an innovative platform designed to improve communication, enhance security, and foster community engagement in urban apartment complexes in Sri Lanka.  ",
+      technologies: [ "Firebase", "Flutter", "MongoDB"],
+      image: "/images/Screenshot 2025-04-17 at 10.14.51.png", // Update with your actual PNG path
+      demoUrl: "https://www.weneighbour.live/",
+      githubUrl: "https://github.com/alwaysPasindu/we_neighbour_project",
     },
     {
       id: 4,
-      title: "Weather Dashboard",
+      title: "Real-Time Event Ticketing System",
       category: "web",
-      description: "A weather dashboard with location-based forecasts and interactive maps.",
-      technologies: ["JavaScript", "OpenWeather API", "Mapbox", "Chart.js"],
-      image: "/placeholder.svg",
-      demoUrl: "#",
-      githubUrl: "#",
+      description: "A concurrent ticketing system for real-time event ticket management.",
+      technologies: ["React", "Spring Boot ", "oop ", "java","REST API","Perodic polling"],
+      image: "/images/Screenshot 2025-04-17 at 10.19.47.png", // Update with your actual PNG path
+      demoUrl: "https://ticketing-system-frontend-phi.vercel.app/",
+      githubUrl: "https://github.com/saranidinethma/Ticketing-System-Backend",
     },
-    {
-      id: 5,
-      title: "Portfolio Website",
-      category: "web",
-      description: "A responsive portfolio website showcasing projects and skills.",
-      technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-      image: "/placeholder.svg",
-      demoUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      id: 6,
-      title: "Recipe Finder",
-      category: "mobile",
-      description: "A mobile app for finding recipes based on available ingredients.",
-      technologies: ["React Native", "Redux", "Spoonacular API"],
-      image: "/placeholder.svg",
-      demoUrl: "#",
-      githubUrl: "#",
-    },
+  
   ]
 
   const filteredProjects = filter === "all" ? projects : projects.filter((project) => project.category === filter)
@@ -135,6 +116,11 @@ export default function Projects() {
             >
               <div className="group relative overflow-hidden rounded-lg bg-background border shadow-sm hover:shadow-md transition-all h-full flex flex-col">
                 <div className="aspect-video bg-muted relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={`${project.title} preview`}
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-primary/5" />
                 </div>
                 <div className="p-6 flex-grow flex flex-col">
