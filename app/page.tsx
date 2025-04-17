@@ -197,43 +197,48 @@ export default function Home() {
 
       {/* About Me Preview */}
       <section className="py-16 px-4 bg-muted/50">
-        <div className="container mx-auto max-w-5xl">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="relative"
-            >
-              <div className="aspect-square rounded-lg bg-muted overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-primary/5" />
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="text-3xl font-bold mb-4">About Me</h2>
-              <p className="text-muted-foreground mb-4">
-                I'm a passionate developer with over 5 years of experience creating web applications. I love solving
-                complex problems and turning ideas into reality.
-              </p>
-              <p className="text-muted-foreground mb-6">
-                When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
-                or enjoying outdoor activities.
-              </p>
-              <Button asChild>
-                <Link href="/about">
-                  Learn More <User className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </motion.div>
-          </div>
+  <div className="container mx-auto max-w-5xl">
+    <div className="grid md:grid-cols-2 gap-8 items-center">
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="relative"
+      >
+        <div className="aspect-square rounded-lg bg-muted overflow-hidden">
+          <img
+            src="/images/WhatsApp Image 2025-03-22 at 17.47.31 (1).jpeg" // Replace with the actual path to your image
+            alt="About Me"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-primary/5" />
         </div>
-      </section>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <h2 className="text-3xl font-bold mb-4">About Me</h2>
+        <p className="text-muted-foreground mb-4">
+          I'm a passionate developer with over 5 years of experience creating web applications. I love solving
+          complex problems and turning ideas into reality.
+        </p>
+        <p className="text-muted-foreground mb-6">
+          When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
+          or enjoying outdoor activities.
+        </p>
+        <Button asChild>
+          <Link href="/about">
+            Learn More <User className="ml-2 h-4 w-4" />
+          </Link>
+        </Button>
+      </motion.div>
+    </div>
+  </div>
+</section>
 
       {/* Contact CTA */}
       <section className="py-16 px-4">
