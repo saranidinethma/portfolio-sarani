@@ -44,7 +44,7 @@ export default function About() {
 
             <div className="mt-8">
               <Button asChild>
-                <Link href="/files/resume.pdf">
+                <Link href="/Files/sarani-liyanage.pdf" download>
                   <Download className="mr-2 h-4 w-4" /> Download Resume
                 </Link>
               </Button>
@@ -91,17 +91,16 @@ export default function About() {
           <div className="space-y-8">
             {[
               {
-                degree: "Master's in Computer Science",
-                school: "Tech University",
-                period: "2014 - 2016",
-                description: "Specialized in web technologies and user interface design. Graduated with honors.",
+                degree: "BSc (Hons) in Computer Science",
+                school: "University of Westminster (UK)",
+                period: "2023 - Present",
+               
               },
               {
-                degree: "Bachelor's in Software Engineering",
-                school: "State University",
-                period: "2010 - 2014",
-                description:
-                  "Focused on programming fundamentals, data structures, and algorithms. Participated in coding competitions.",
+                degree: "Ave Maria Convent Negombo",
+                school: "Negombo",
+                period: "2009 - 2022",
+                
               },
             ].map((edu, i) => (
               <motion.div
@@ -124,7 +123,7 @@ export default function About() {
                       {edu.period}
                     </span>
                   </div>
-                  <p className="text-muted-foreground">{edu.description}</p>
+                  
                 </div>
               </motion.div>
             ))}
