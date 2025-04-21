@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
+import { sendEmail } from '@/lib/email'; // Keep this import, remove emailjs
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -32,18 +32,8 @@ export default function Contact() {
     setError(null);
 
     try {
-      // Send form data to EmailJS
-      await emailjs.send(
-        "service_gdiquht", // Replace with your EmailJS Service ID
-        "template_2tho3yh", // Replace with your EmailJS Template ID
-        {
-          name: formState.name,
-          email: formState.email,
-          subject: formState.subject,
-          message: formState.message,
-        },
-        "YOUR_USER_ID" // Replace with your EmailJS User ID
-      );
+      // Use the sendEmail function from lib/email.js
+      await sendEmail(formState);
 
       setIsSubmitting(false);
       setIsSubmitted(true);
@@ -59,6 +49,7 @@ export default function Contact() {
         setIsSubmitted(false);
       }, 5000);
     } catch (err) {
+      console.error("Email sending failed:", err); // Add this for debugging
       setIsSubmitting(false);
       setError("Failed to send message. Please try again later.");
     }
