@@ -22,7 +22,7 @@ export default function Home() {
               <span className="text-primary">Hello, I'm</span> Sarani Liyanage
             </h1>
             <h2 className="text-2xl md:text-3xl font-medium text-muted-foreground mb-6">
-              Full Stack Developer & UI/UX Designer
+              Full Stack Developer 
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
               I'm a full-stack web developer passionate about creating beautiful, functional websites and applications.
