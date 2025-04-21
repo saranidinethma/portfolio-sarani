@@ -211,12 +211,10 @@ export default function Home() {
             >
               <h2 className="text-3xl font-bold mb-4">About Me</h2>
               <p className="text-muted-foreground mb-4">
-                I'm a passionate developer with over 5 years of experience creating web applications. I love solving
-                complex problems and turning ideas into reality.
+              I'm a passionate full-stack developer in the making, currently pursuing my Computer Science degree at IIT, affiliated with the University of Westminster. I love bringing ideas to life through clean, responsive web apps using tools like React, Spring Boot, and TypeScript.
               </p>
               <p className="text-muted-foreground mb-6">
-                When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
-                or enjoying outdoor activities.
+              When I’m not coding, you’ll find me experimenting with new frameworks, collaborating on team projects, or exploring creative UI/UX ideas to enhance user experiences.
               </p>
               <Button asChild>
                 <Link href="/about">

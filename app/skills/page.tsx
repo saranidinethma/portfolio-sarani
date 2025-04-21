@@ -128,29 +128,28 @@ export default function Skills() {
           <h2 className="text-2xl font-bold mb-6 text-center">Professional Development</h2>
           <div className="bg-background border rounded-lg p-6">
             <p className="text-muted-foreground mb-4">
-              I am committed to continuous learning and staying updated with the latest technologies and industry
-              trends. Some of my recent professional development activities include:
+            I am committed to continuous learning and staying updated with the latest technologies and industry best practices. Some of my recent professional development activities include:
             </p>
             <ul className="space-y-2 text-muted-foreground">
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span>Completed advanced courses in React and Next.js development</span>
+                <span>Completed certified courses on REST API, Object-Oriented Programming (OOP), Spring Boot, and React.js via LinkedIn Learning</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span>Participated in web accessibility workshops and implemented WCAG guidelines</span>
+                <span>Continuously engaged in self-driven learning through online resources, technical documentation, and community forums</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span>Contributed to open-source projects to improve collaboration skills</span>
+                <span>Built and deployed multiple full-stack projects using React, Spring Boot, Node.js, and PostgreSQL</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span>Attended tech conferences and webinars on emerging technologies</span>
+                <span>Practiced scalable and responsive UI design with Tailwind CSS, Styled Components, and Figma</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span>Earned certifications in cloud services and containerization</span>
+                <span>Contributed to collaborative academic projects such as the We Neighbour App and a Real-Time Event Ticketing System</span>
               </li>
             </ul>
           </div>
