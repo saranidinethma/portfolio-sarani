@@ -1,14 +1,13 @@
-// app/contact/page.tsx
-"use client"
+"use client";
 
-import type React from "react"
-
-import { motion } from "framer-motion"
-import { Mail, MapPin, MessageSquare, Phone, Send } from 'lucide-react'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { useState } from "react"
+import type React from "react";
+import { motion } from "framer-motion";
+import { Mail, MapPin, MessageSquare, Phone, Send } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -16,37 +15,54 @@ export default function Contact() {
     email: "",
     subject: "",
     message: "",
-  })
+  });
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormState((prev) => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setFormState((prev) => ({ ...prev, [name]: value }));
+  };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setIsSubmitted(true)
+    try {
+      // Send form data to EmailJS
+      await emailjs.send(
+        "service_gdiquht", // Replace with your EmailJS Service ID
+        "template_2tho3yh", // Replace with your EmailJS Template ID
+        {
+          name: formState.name,
+          email: formState.email,
+          subject: formState.subject,
+          message: formState.message,
+        },
+        "YOUR_USER_ID" // Replace with your EmailJS User ID
+      );
+
+      setIsSubmitting(false);
+      setIsSubmitted(true);
       setFormState({
         name: "",
         email: "",
         subject: "",
         message: "",
-      })
+      });
 
       // Reset success message after 5 seconds
       setTimeout(() => {
-        setIsSubmitted(false)
-      }, 5000)
-    }, 1500)
-  }
+        setIsSubmitted(false);
+      }, 5000);
+    } catch (err) {
+      setIsSubmitting(false);
+      setError("Failed to send message. Please try again later.");
+    }
+  };
 
   return (
     <div className="pt-32 pb-16 px-4">
@@ -95,7 +111,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-medium">Location</h3>
-                  <p className="text-muted-foreground">Negombo,srilanka</p>
+                  <p className="text-muted-foreground">Negombo, Sri Lanka</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -105,19 +121,22 @@ export default function Contact() {
                 <div>
                   <h3 className="font-medium">Social Media</h3>
                   <div className="flex gap-4 mt-2">
-                   
-                    <a href="https://www.linkedin.com/in/sarani-dinethma/" className="text-muted-foreground hover:text-primary transition-colors">
+                    <a
+                      href="https://www.linkedin.com/in/sarani-dinethma/"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
                       LinkedIn
                     </a>
-                    <a href="https://github.com/saranidinethma" className="text-muted-foreground hover:text-primary transition-colors">
+                    <a
+                      href="https://github.com/saranidinethma"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
                       GitHub
                     </a>
                   </div>
                 </div>
               </div>
             </div>
-
-            
           </motion.div>
 
           <motion.div
@@ -130,6 +149,12 @@ export default function Contact() {
               <div className="bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-300 p-4 rounded-lg mb-6">
                 <p className="font-medium">Thank you for your message!</p>
                 <p className="text-sm">I'll get back to you as soon as possible.</p>
+              </div>
+            ) : null}
+            {error ? (
+              <div className="bg-red-100 dark:bg-red-900/20 text-red-800 dark:text-red-300 p-4 rounded-lg mb-6">
+                <p className="font-medium">Error</p>
+                <p className="text-sm">{error}</p>
               </div>
             ) : null}
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -223,5 +248,5 @@ export default function Contact() {
         </div>
       </div>
     </div>
-  )
+  );
 }
