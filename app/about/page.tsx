@@ -44,7 +44,7 @@ export default function About() {
 
             <div className="mt-8">
               <Button asChild>
-                <Link href="/Files/SaraniLiyanage_Full-stack_Resume.pdf" download>
+                <Link href="/Files/SARANI_LIYANAGE_INTERN - FULLSTACK DEVELOPER_RESUME.pdf" download>
                   <Download className="mr-2 h-4 w-4" /> Download Resume
                 </Link>
               </Button>

@@ -196,7 +196,7 @@ export default function Home() {
             >
               <div className="aspect-square rounded-lg bg-muted overflow-hidden">
                 <img
-                  src="/images/WhatsApp Image 2025-03-22 at 17.47.31 (1).jpeg"
+                  src="/images/profile pic.png"
                   alt="About Me"
                   className="w-full h-full object-cover"
                 />
